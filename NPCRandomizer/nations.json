@@ -1,0 +1,102 @@
+[
+    {
+        "Name": "Council",
+        "Races": [
+            {
+                "Name": "human",
+                "Start": 0.0,
+                "Stop": 0.3
+            },
+            {
+                "Name": "half-elf",
+                "Start": 0.3,
+                "Stop": 0.35
+            },
+            {
+                "Name": "high elf",
+                "Start": 0.35,
+                "Stop": 0.5
+            },
+            {
+                "Name": "wood elf",
+                "Start": 0.5,
+                "Stop": 0.65
+            },
+            {
+                "Name": "halfling",
+                "Start": 0.65,
+                "Stop": 0.85
+            },
+            {
+                "Name": "dwarf",
+                "Start": 0.85,
+                "Stop": 1.0
+            }
+        ]
+    },
+    {
+        "Name": "Stone Throne",
+        "Races": [
+            {
+                "Name": "human",
+                "Start": 0.0,
+                "Stop": 0.35
+            },
+            {
+                "Name": "half-elf",
+                "Start": 0.35,
+                "Stop": 0.65
+            },
+            {
+                "Name": "yuan-ti",
+                "Start": 0.65,
+                "Stop": 0.95
+            },
+            {
+                "Name": "dwarf",
+                "Start": 0.95,
+                "Stop": 1.0
+            }
+        ]
+    },
+    {
+        "Name": "Dynasty",
+        "Races": [
+            {
+                "Name": "dragonborn",
+                "Start": 0.0,
+                "Stop": 0.3
+            },
+            {
+                "Name": "orc",
+                "Start": 0.3,
+                "Stop": 0.6
+            },
+            {
+                "Name": "goblin",
+                "Start": 0.6,
+                "Stop": 1.0
+            }
+        ]
+    },
+    {
+        "Name": "Byssia",
+        "Races": [
+            {
+                "Name": "human",
+                "Start": 0.0,
+                "Stop": 0.4
+            },
+            {
+                "Name": "half-elf",
+                "Start": 0.4,
+                "Stop": 0.75
+            },
+            {
+                "Name": "wood elf",
+                "Start": 0.75,
+                "Stop": 1.0
+            }
+        ]
+    }
+]
