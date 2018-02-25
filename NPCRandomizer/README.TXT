@@ -1,3 +1,5 @@
+*NPC Randomizer*
+
 This app uses a selection of JSON-format files as the source of the names and cultures. This file explains the format of each file. In practice, npc_names.json, races.json, and nations.json are the main ones to change.
 
 Data Types:
