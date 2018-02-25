@@ -28,85 +28,130 @@ namespace NPCRandomizer
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("<html>\r\n<head>\r\n<title>NPCs</title>\r\n</head>\r\n<body>\r\n<h1>Generated NPCs for the " +
-                    "");
+            this.Write(@"<html>
+<head>
+	<title>NPCs</title>
+	<style>
+		.container {
+			width: 80%;
+			margin-left: 10%;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 8px;
+		}
+
+		h1 {
+			text-align: center;
+			grid-column: 1/4;
+			height: 3em;
+		}
+
+		table {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		td {
+			padding: 3px;
+		}
+
+		.heading {
+			font-weight: bold;
+			border: 1px solid black;
+		}
+
+		.demographics {
+			font-size: 0.9em;
+			border: 1px solid black;
+		}
+
+		.data td {
+			border: 1px solid black;
+			
+		}
+
+	</style>
+</head>
+<body>
+<div class=""container"">
+<h1>Generated NPCs for the ");
             
-            #line 12 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 53 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Nation));
             
             #line default
             #line hidden
             this.Write("</h1>\r\n");
             
-            #line 13 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 54 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
  foreach (PersonData npc in People) { 
             
             #line default
             #line hidden
-            this.Write("\t<table>\r\n\t\t<tr>\r\n\t\t\t<td><b>");
+            this.Write("\t<table>\r\n\t\t<tr class=\"heading\">\r\n\t\t\t<td><b>");
             
-            #line 16 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 57 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(npc.Name));
             
             #line default
             #line hidden
-            this.Write("</b></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>");
+            this.Write("</b></td>\r\n\t\t\t<td></td>\r\n\t\t</tr>\r\n\t\t<tr class=\"demographics\">\r\n\t\t\t<td>");
             
-            #line 19 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 61 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(npc.Age));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 19 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 61 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(npc.Gender));
             
             #line default
             #line hidden
             this.Write("</td>\r\n\t\t\t<td>");
             
-            #line 20 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 62 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(npc.Race));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 20 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 62 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(npc.Subrace != ""? "(" + npc.Subrace + ")" : ""));
             
             #line default
             #line hidden
-            this.Write(" </td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>");
+            this.Write(" </td>\r\n\t\t</tr>\r\n\t\t<tr class=\"data\">\r\n\t\t\t<td>");
             
-            #line 23 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 65 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(npc.Religion));
             
             #line default
             #line hidden
             this.Write("</td>\r\n\t\t\t<td>");
             
-            #line 24 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 66 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(npc.Profession));
             
             #line default
             #line hidden
-            this.Write("</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>");
+            this.Write("</td>\r\n\t\t</tr>\r\n\t\t<tr class=\"data\">\r\n\t\t\t<td>");
             
-            #line 27 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 69 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(npc.Personality));
             
             #line default
             #line hidden
             this.Write("</td>\r\n\t\t</tr>\r\n\t</table>\r\n");
             
-            #line 30 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
+            #line 72 "C:\Users\bhall\Documents\Visual Studio 2017\Projects\NPCRandomizer\NPCRandomizer\PersonOutput.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("</body>\r\n</html>\r\n\r\n");
+            this.Write("</div>\r\n</body>\r\n</html>\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

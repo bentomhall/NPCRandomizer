@@ -26,7 +26,7 @@ namespace NPCRandomizer
                 Console.WriteLine($"Created NPC {index} of {number}: {npc.Name}");
                 index++;
             }
-            Save();
+            Save(nation);
             return;
         }
 
@@ -57,11 +57,12 @@ namespace NPCRandomizer
             
         }
 
-        public void Save()
+        public void Save(string nation)
         {
             var template = new PersonOutput(npcs);
             var text = template.TransformText();
-            System.IO.File.WriteAllText("generated_npcs.html", text);
+            var filename = nation + System.IO.Path.GetRandomFileName() + ".html"; 
+            System.IO.File.WriteAllText(filename, text);
             return;
         }
 

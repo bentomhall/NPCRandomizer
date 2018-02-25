@@ -6,28 +6,71 @@
 <#@ output extension=".html" #>
 <html>
 <head>
-<title>NPCs</title>
+	<title>NPCs</title>
+	<style>
+		.container {
+			width: 80%;
+			margin-left: 10%;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 8px;
+		}
+
+		h1 {
+			text-align: center;
+			grid-column: 1/4;
+			height: 3em;
+		}
+
+		table {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		td {
+			padding: 3px;
+		}
+
+		.heading {
+			font-weight: bold;
+			border: 1px solid black;
+		}
+
+		.demographics {
+			font-size: 0.9em;
+			border: 1px solid black;
+		}
+
+		.data td {
+			border: 1px solid black;
+			
+		}
+
+	</style>
 </head>
 <body>
+<div class="container">
 <h1>Generated NPCs for the <#= Nation #></h1>
 <# foreach (PersonData npc in People) { #>
 	<table>
-		<tr>
+		<tr class="heading">
 			<td><b><#= npc.Name #></b></td>
+			<td></td>
 		</tr>
-		<tr>
+		<tr class="demographics">
 			<td><#= npc.Age #> <#= npc.Gender #></td>
 			<td><#= npc.Race #> <#= npc.Subrace != ""? "(" + npc.Subrace + ")" : "" #> </td>
 		</tr>
-		<tr>
+		<tr class="data">
 			<td><#= npc.Religion #></td>
 			<td><#= npc.Profession #></td>
 		</tr>
-		<tr>
+		<tr class="data">
 			<td><#= npc.Personality #></td>
 		</tr>
 	</table>
 <# } #>
+</div>
 </body>
 </html>
 
