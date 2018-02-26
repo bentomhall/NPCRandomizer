@@ -30,6 +30,9 @@
     <None Update="npc_names.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="person.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="personality.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
