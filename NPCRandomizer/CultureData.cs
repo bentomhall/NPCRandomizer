@@ -5,32 +5,32 @@ using System.Text;
 
 namespace NPCRandomizer
 {
-    internal class CultureData
+    public class CultureData
     {
-        internal string Race { get; set; }
-        internal string Nation { get; set; }
-        internal string Culture { get; set; }
-        internal List<NamedRange> Gender { get; set; }
-        internal List<string> Religiosity { get; set; }
-        internal List<NamedRange> Subrace { get; set; }
+        public string Race { get; set; }
+        public string Nation { get; set; }
+        public string Culture { get; set; }
+        public List<NamedRange> Gender { get; set; }
+        public List<string> Religiosity { get; set; }
+        public List<NamedRange> Subrace { get; set; }
 
-        internal bool Matches(string race, string nation)
+        public bool Matches(string race, string nation)
         {
-            return (race == Race && nation == Nation);
+            return (race.ToLower() == Race.ToLower() && nation.ToLower() == Nation.ToLower());
         }
 
-        internal string GetGender()
+        public string GetGender()
         {
             var roll = r.NextDouble();
             return Gender.First(x => x.Matches(roll)).Name;
         }
 
-        internal string GetReligion()
+        public string GetReligion()
         {
             return r.Choice(Religiosity);
         }
 
-        internal string GetSubrace()
+        public string GetSubrace()
         {
             if (Subrace.Count == 0)
             {
