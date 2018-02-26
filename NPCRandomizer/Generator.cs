@@ -30,7 +30,7 @@ namespace NPCRandomizer
             return;
         }
 
-        private PersonData GenerateNPC(string nation)
+        public PersonData GenerateNPC(string nation)
         {
             
             var race = nations.First(x => x.Name == nation).GetRace();

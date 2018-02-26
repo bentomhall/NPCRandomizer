@@ -4,14 +4,14 @@ using System.Text;
 
 namespace NPCRandomizer
 {
-    public class NameData
+    internal class NameData
     {
-        public string Culture { get; set; }
-        public List<string> Male { get; set; }
-        public List<string> Female { get; set; }
-        public string Combiner { get; set; }
-        public List<string> Family { get; set; }
-        public string Base { get; set; }
+        internal string Culture { get; set; }
+        internal List<string> Male { get; set; }
+        internal List<string> Female { get; set; }
+        internal string Combiner { get; set; }
+        internal List<string> Family { get; set; }
+        internal string Base { get; set; }
 
         private Random r = new Random();
 
@@ -28,7 +28,7 @@ namespace NPCRandomizer
             }
         }
 
-        public string GetName(string gender)
+        internal string GetName(string gender)
         {
             var given = RandomName(gender);
             return $"{given} {Combiner} {r.Choice(Family)}";
