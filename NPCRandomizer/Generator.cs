@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NPCRandomizer
 {
-    class Generator
+    public class Generator
     {
         public Generator(string nameDataFile, string cultureFile, string nationFile)
         {
