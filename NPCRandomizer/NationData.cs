@@ -5,12 +5,12 @@ using System.Text;
 
 namespace NPCRandomizer
 {
-    internal class NationData
+    public class NationData
     {
-        internal string Name { get; set; }
-        internal List<NamedRange> Races { get; set; }
+        public string Name { get; set; }
+        public List<NamedRange> Races { get; set; }
 
-        internal string GetRace()
+        public string GetRace()
         {
             var roll = r.NextDouble();
             return Races.First(x => x.Matches(roll)).Name;

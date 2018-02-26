@@ -54,7 +54,32 @@ namespace NPCRandomizer
                 Profession = r.Choice(professions),
                 Age = age
             };
-            
+        }
+
+        public PersonData GenerateNPCforCity(NationData nation)
+        {
+
+            var race = nation.GetRace();
+            var culture = cultures.First(x => x.Matches(race, nation.Name));
+            var gender = culture.GetGender();
+            var religion = culture.GetReligion();
+            var subrace = culture.GetSubrace();
+            var nameList = names.First(x => x.Culture == culture.Culture);
+            var name = nameList.GetName(gender);
+            var age = r.Choice(new List<string>() { "young", "middle-aged", "old", "ancient" });
+            return new PersonData()
+            {
+                Name = name,
+                Nation = nation.Name,
+                Culture = culture.Culture,
+                Gender = gender,
+                Religion = religion,
+                Race = race,
+                Subrace = subrace,
+                Personality = r.Choice(personalities),
+                Profession = r.Choice(professions),
+                Age = age
+            };
         }
 
         public void Save(string nation)
