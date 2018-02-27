@@ -11,16 +11,23 @@ namespace NPCRandomizer
             var nationFile = "nations.json";
             var cultureFile = "races.json";
             var generator = new Generator(nameFile, cultureFile, nationFile);
+            var validNations = generator.GetValidNations();
             Console.WriteLine("Welcome to the NPC Generator");
-            var nation = GetNation();
+            var nation = GetNation(validNations);
             var number = GetNumber();
+            Console.WriteLine(new string('-', 30));
+            Console.WriteLine($"Now Generating {number} NPCs for {nation}");
             generator.Create(nation, number);
             return 0;
         }
 
-        static string GetNation()
+        static string GetNation(IEnumerable<string> validNations)
         {
+            Console.WriteLine("Valid nation choices are: ");
+            Console.WriteLine(String.Join(Environment.NewLine, validNations));
+            Console.WriteLine(new string('-', 30));
             Console.Write("Please enter the (case-sensitive) name of the nation to generate NPCs for: ");
+            
             return Console.ReadLine();
         }
 
