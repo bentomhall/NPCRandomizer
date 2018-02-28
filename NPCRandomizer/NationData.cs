@@ -8,12 +8,17 @@ namespace NPCRandomizer
     public class NationData
     {
         public string Name { get; set; }
-        public List<NamedRange> Races { get; set; }
+        public Dictionary<string, double> Races { get; set; }
+        private WeightedChoiceSet races;
 
         public string GetRace()
         {
+            if (races == null)
+            {
+                races = new WeightedChoiceSet(Races);
+            }
             var roll = r.NextDouble();
-            return Races.First(x => x.Matches(roll)).Name;
+            return races.Match(roll);
         }
 
         private Random r = new Random();

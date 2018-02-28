@@ -10,9 +10,12 @@ namespace NPCRandomizer
         public string Race { get; set; }
         public string Nation { get; set; }
         public string Culture { get; set; }
-        public List<NamedRange> Gender { get; set; }
+        public Dictionary<string, double> Gender { get; set; }
         public List<string> Religiosity { get; set; }
-        public List<NamedRange> Subrace { get; set; }
+        public Dictionary<string, double> Subrace { get; set; }
+
+        private WeightedChoiceSet genders;
+        private WeightedChoiceSet subraces;
 
         public bool Matches(string race, string nation)
         {
@@ -21,8 +24,12 @@ namespace NPCRandomizer
 
         public string GetGender()
         {
+            if (genders == null) 
+            {
+                genders = new WeightedChoiceSet(Gender);    
+            }
             var roll = r.NextDouble();
-            return Gender.First(x => x.Matches(roll)).Name;
+            return genders.Match(roll);
         }
 
         public string GetReligion()
@@ -32,12 +39,17 @@ namespace NPCRandomizer
 
         public string GetSubrace()
         {
+            if (subraces == null)
+            {
+                subraces = new WeightedChoiceSet(Subrace);
+            }
             if (Subrace.Count == 0)
             {
                 return "";
             }
             var roll = r.NextDouble();
-            return Subrace.First(x => x.Matches(roll)).Name;
+            var subrace = subraces.Match(roll);
+            return subrace == "N/A"? "": subrace;
         }
 
         private Random r = new Random();
